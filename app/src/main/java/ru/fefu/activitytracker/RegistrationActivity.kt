@@ -24,8 +24,8 @@ class RegistrationActivity : AppCompatActivity() {
     }
 
     private fun initButtonsListeners() {
-        binding.toolbar.ivReturnBack.setOnClickListener {
-            startActivity(Intent(this, WelcomeActivity::class.java))
+        binding.tbLayout.toolbar.setNavigationOnClickListener {
+            finish()
         }
 
         binding.btnRegister.setOnClickListener {

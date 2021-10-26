@@ -1,6 +1,5 @@
 package ru.fefu.activitytracker
 
-import android.content.Intent
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import ru.fefu.activitytracker.databinding.ActivityLoginBinding
@@ -20,8 +19,8 @@ class LoginActivity : AppCompatActivity() {
     }
 
     private fun initButtonsListeners() {
-        binding.toolbar.ivReturnBack.setOnClickListener {
-            startActivity(Intent(this, WelcomeActivity::class.java))
+        binding.tbLayout.toolbar.setNavigationOnClickListener {
+            finish()
         }
     }
 }
