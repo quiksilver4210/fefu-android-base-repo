@@ -1,26 +1,27 @@
-package ru.fefu.activitytracker
+package ru.fefu.activitytracker.ui.fragments
 
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
-import ru.fefu.activitytracker.databinding.FragmentAllActivityBinding
+import ru.fefu.activitytracker.R
+import ru.fefu.activitytracker.databinding.FragmentActivityBinding
 
-class AllActivityFragment : Fragment(R.layout.fragment_all_activity) {
-    private lateinit var binding: FragmentAllActivityBinding
+class ActivityFragment : Fragment(R.layout.fragment_activity) {
+    private lateinit var binding: FragmentActivityBinding
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View {
-        binding = FragmentAllActivityBinding.inflate(inflater, container, false)
+        binding = FragmentActivityBinding.inflate(inflater, container, false)
         return binding.root
     }
 
     companion object {
 
-        const val TAG = "all_activity_fragment"
+        const val TAG = "activity_fragment"
 
         fun newInstance(): ActivityFragment {
             val bundle = Bundle()
@@ -34,6 +35,12 @@ class AllActivityFragment : Fragment(R.layout.fragment_all_activity) {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
+        if (savedInstanceState == null) {
+            childFragmentManager.beginTransaction().apply {
+                add(R.id.fcvActivity, AllActivityFragment.newInstance(), AllActivityFragment.TAG)
+                commit()
+            }
+        }
     }
 
 

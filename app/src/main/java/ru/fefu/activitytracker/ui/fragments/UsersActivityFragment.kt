@@ -1,4 +1,4 @@
-package ru.fefu.activitytracker
+package ru.fefu.activitytracker.ui.fragments
 
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -7,8 +7,7 @@ import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.LinearLayoutManager
 import ru.fefu.activitytracker.data.ActivityData
-import ru.fefu.activitytracker.data.ActivityDataModel
-import ru.fefu.activitytracker.data.SummaryActivityData
+import ru.fefu.activitytracker.data.ActivityListAdapter
 import ru.fefu.activitytracker.databinding.FragmentUsersActivityBinding
 
 
@@ -25,8 +24,13 @@ class UsersActivityFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-
-        binding.rvActivities.adapter = ActivityListAdapter(getActivityData())
+        val adapter = parentFragment?.let {
+            ActivityListAdapter(
+                getActivityData(),
+                it.parentFragmentManager
+            )
+        }
+        binding.rvActivities.adapter = adapter
         binding.rvActivities.layoutManager = LinearLayoutManager(requireContext())
 
     }
@@ -42,11 +46,9 @@ class UsersActivityFragment : Fragment() {
 
     }
 
-    private fun getActivityData(): List<ActivityDataModel> {
+    private fun getActivityData(): List<ActivityData> {
         return listOf(
-            SummaryActivityData("29 Мая 2021"),
             ActivityData("5 км", "2 часа", "Велосипед", "@username1", "29.05.2021"),
-            SummaryActivityData("28 Мая 2021"),
             ActivityData("6 км", "2 часа", "Серфинг", "@username2", "28.05.2021"),
             ActivityData("5 км", "2 часа", "Велосипед", "@username3", "28.05.2021"),
             ActivityData("7 км", "2 часа", "Велосипед", "@username4", "28.05.2021"),

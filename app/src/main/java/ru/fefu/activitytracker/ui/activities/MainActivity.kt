@@ -1,9 +1,12 @@
-package ru.fefu.activitytracker
+package ru.fefu.activitytracker.ui.activities
 
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.Fragment
+import ru.fefu.activitytracker.R
 import ru.fefu.activitytracker.databinding.ActivityMainBinding
+import ru.fefu.activitytracker.ui.fragments.ActivityFragment
+import ru.fefu.activitytracker.ui.fragments.ProfileFragment
 
 class MainActivity : AppCompatActivity() {
     private lateinit var binding: ActivityMainBinding

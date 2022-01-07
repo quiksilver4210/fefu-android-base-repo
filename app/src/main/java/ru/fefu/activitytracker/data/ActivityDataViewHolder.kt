@@ -1,11 +1,11 @@
-package ru.fefu.activitytracker
+package ru.fefu.activitytracker.data
 
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
-import ru.fefu.activitytracker.data.ActivityData
+import ru.fefu.activitytracker.R
 
 class ActivityDataViewHolder(activityCard: View) : RecyclerView.ViewHolder(activityCard) {
     private val tvActivityDistance: TextView = activityCard.findViewById(R.id.tvActivityDistance)

@@ -11,10 +11,10 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:navigationIcon="@drawable/ic_arrow_back"
-        app:title="Велосипед"
-        app:menu="@menu/toolbar_my_activity_details">
+        app:title="Велосипед">
 
     </androidx.appcompat.widget.Toolbar>
+
 
     <TextView
         android:id="@+id/tvActivityDistanceDetail"
@@ -80,7 +80,10 @@
         <com.google.android.material.textfield.TextInputEditText
             android:id="@+id/comment_activity_my_edit"
             android:layout_width="match_parent"
-            android:layout_height="match_parent" />
+            android:layout_height="match_parent"
+            android:clickable="false"
+            android:cursorVisible="false"
+            android:focusable="false" />
     </com.google.android.material.textfield.TextInputLayout>
 
 

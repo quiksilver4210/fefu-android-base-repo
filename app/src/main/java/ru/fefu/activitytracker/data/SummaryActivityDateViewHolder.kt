@@ -1,11 +1,11 @@
-package ru.fefu.activitytracker
+package ru.fefu.activitytracker.data
 
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
-import ru.fefu.activitytracker.data.SummaryActivityData
+import ru.fefu.activitytracker.R
 
 class SummaryActivityDateViewHolder(activitySummary: View) :
     RecyclerView.ViewHolder(activitySummary) {

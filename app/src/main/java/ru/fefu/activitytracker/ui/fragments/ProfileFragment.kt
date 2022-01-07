@@ -1,10 +1,11 @@
-package ru.fefu.activitytracker
+package ru.fefu.activitytracker.ui.fragments
 
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
+import ru.fefu.activitytracker.R
 
 
 class ProfileFragment : Fragment() {
