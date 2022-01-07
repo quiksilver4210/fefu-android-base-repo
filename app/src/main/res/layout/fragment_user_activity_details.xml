@@ -11,74 +11,27 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:navigationIcon="@drawable/ic_arrow_back"
-        app:title="Велосипед">
-
-    </androidx.appcompat.widget.Toolbar>
+        app:title="Велосипед" />
 
 
-    <TextView
-        android:id="@+id/tvActivityDistanceDetail"
-        style="@style/DefaultActivityMainDetailText"
-        android:text="14.32 км"
-        app:layout_constraintBottom_toTopOf="@id/tvActivityDateDetail"
+    <include
+        android:id="@+id/layoutDetailInfo"
+        layout="@layout/layout_detail_activity_info"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/tbActivityDetail" />
-
-    <TextView
-        android:id="@+id/tvActivityDateDetail"
-        style="@style/DefaultActivitySubDetailText"
-        android:text="14 часов назад"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/tvActivityDistanceDetail" />
-
-    <TextView
-        android:id="@+id/tvActivityDurationDetail"
-        style="@style/DefaultActivityMainDetailText"
-        android:text="1 ч 42 мин"
-        app:layout_constraintBottom_toTopOf="@id/tvStartLabel"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/tvActivityDateDetail" />
-
-    <TextView
-        android:id="@+id/tvStartLabel"
-        style="@style/DefaultActivitySubHeadText"
-        android:text="Старт"
-        app:layout_constraintHorizontal_chainStyle="packed"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/tvActivityDurationDetail" />
-
-    <TextView
-        android:id="@+id/tvStartTime"
-        style="@style/DefaultActivitySubDetailText"
-        android:text="14:49"
-        app:layout_constraintStart_toEndOf="@id/tvStartLabel"
-        app:layout_constraintTop_toBottomOf="@id/tvActivityDurationDetail" />
-
-
-    <TextView
-        android:id="@+id/tvFinishLabel"
-        style="@style/DefaultActivitySubHeadText"
-        android:text="Финиш"
-        app:layout_constraintStart_toEndOf="@id/tvStartTime"
-        app:layout_constraintTop_toBottomOf="@id/tvActivityDurationDetail" />
-
-    <TextView
-        android:id="@+id/tvFinishTime"
-        style="@style/DefaultActivitySubDetailText"
-        android:text="16:31"
-        app:layout_constraintStart_toEndOf="@id/tvFinishLabel"
-        app:layout_constraintTop_toBottomOf="@id/tvActivityDurationDetail" />
+        app:layout_constraintTop_toBottomOf="@id/tbActivityDetail" />
 
     <com.google.android.material.textfield.TextInputLayout
-        android:id="@+id/comment_activity_my"
+        android:id="@+id/tilComment"
         style="@style/DetailCommentTextInputLayout"
         android:hint="Комментарий"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/tvStartTime">
+        app:layout_constraintTop_toBottomOf="@id/layoutDetailInfo">
 
         <com.google.android.material.textfield.TextInputEditText
-            android:id="@+id/comment_activity_my_edit"
+            android:id="@+id/tiedComment"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:clickable="false"

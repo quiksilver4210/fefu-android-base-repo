@@ -49,8 +49,6 @@ class AllActivityFragment : Fragment(R.layout.fragment_all_activity) {
             }
         }.attach()
     }
-
-
 }
 
 class AllActivityFragmentAdapter(fragment: AllActivityFragment) : FragmentStateAdapter(fragment) {

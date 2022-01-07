@@ -15,20 +15,20 @@ class ActivityListAdapter(
     private val fragmentManager: FragmentManager
 ) :
     RecyclerView.Adapter<RecyclerView.ViewHolder>() {
-    private val activityDataList: MutableList<ActivityDataModel> = mutableListOf()
+    private var activityDataList = mutableListOf<ActivityDataModel>()
 
     init {
-        val proccessedData = mutableMapOf<String, MutableList<ActivityData>>()
+        val processedData = mutableMapOf<String, MutableList<ActivityData>>()
         activityData.forEach {
-            if (proccessedData[it.date] == null) {
-                proccessedData[it.date] = mutableListOf(it)
+            if (processedData[it.date] == null) {
+                processedData[it.date] = mutableListOf(it)
             } else {
-                proccessedData[it.date]?.add(it)
+                processedData[it.date]?.add(it)
             }
 
         }
 
-        proccessedData.forEach { (date, data) ->
+        processedData.forEach { (date, data) ->
             activityDataList.add(SummaryActivityData(date))
             data.forEach {
                 activityDataList.add(it)
@@ -74,7 +74,7 @@ class ActivityListAdapter(
 
                 val detailFragmentTag: String
                 val detailFragmentInstance: Fragment
-                if ((currentData).username.isEmpty()) {
+                if (currentData.username.isEmpty()) {
                     detailFragmentTag = MyActivityDetailsFragment.TAG
                     detailFragmentInstance = MyActivityDetailsFragment.newInstance()
                 } else {
@@ -85,7 +85,6 @@ class ActivityListAdapter(
 
                 holder.itemView.setOnClickListener {
                     val currentFragment = fragmentManager.findFragmentByTag(AllActivityFragment.TAG)
-
                     fragmentManager.beginTransaction().apply {
                         if (currentFragment != null) {
                             hide(currentFragment)
