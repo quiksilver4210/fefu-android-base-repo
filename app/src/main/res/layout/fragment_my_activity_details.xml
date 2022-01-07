@@ -1,0 +1,132 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:bind="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <include
+        android:id="@+id/tbActivityDetail"
+        layout="@layout/toolbar_activity_details"
+        bind:menu="@menu/toolbar_my_activity_details" />
+
+    <TextView
+        android:id="@+id/tvActivityDistanceDetail"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="32dp"
+        android:layout_marginTop="24dp"
+
+        android:text="14.32 км"
+        android:textColor="#101010"
+        android:textSize="24sp"
+        android:textStyle="bold"
+
+        app:layout_constraintBottom_toTopOf="@id/tvActivityDateDetail"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintVertical_chainStyle="packed" />
+
+    <TextView
+        android:id="@+id/tvActivityDateDetail"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="32dp"
+
+        android:text="14 часов назад"
+        android:textColor="#808080"
+        android:textSize="16sp"
+
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tvActivityDistanceDetail" />
+
+    <TextView
+        android:id="@+id/tvActivityDurationDetail"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="32dp"
+        android:layout_marginTop="24dp"
+
+        android:text="1 ч 42 мин"
+        android:textColor="#101010"
+        android:textSize="24sp"
+        android:textStyle="bold"
+
+        app:layout_constraintBottom_toTopOf="@id/tvStartLabel"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tvActivityDateDetail"
+        app:layout_constraintVertical_chainStyle="packed" />
+
+    <TextView
+        android:id="@+id/tvStartLabel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="32dp"
+
+        android:text="Старт"
+        android:textColor="#101010"
+        android:textSize="16sp"
+
+        app:layout_constraintHorizontal_chainStyle="packed"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tvActivityDurationDetail" />
+
+    <TextView
+        android:id="@+id/tvStartTime"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+
+        android:text="14:49"
+        android:textColor="#808080"
+        android:textSize="16sp"
+
+        app:layout_constraintStart_toEndOf="@id/tvStartLabel"
+        app:layout_constraintTop_toBottomOf="@id/tvActivityDurationDetail" />
+
+
+    <TextView
+        android:id="@+id/tvFinishLabel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+
+        android:text="Финиш"
+        android:textColor="#101010"
+        android:textSize="16sp"
+
+        app:layout_constraintStart_toEndOf="@id/tvStartTime"
+        app:layout_constraintTop_toBottomOf="@id/tvActivityDurationDetail" />
+
+    <TextView
+        android:id="@+id/tvFinishTime"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:text="16:31"
+        android:textColor="#808080"
+        android:textSize="16sp"
+        app:layout_constraintStart_toEndOf="@id/tvFinishLabel"
+        app:layout_constraintTop_toBottomOf="@id/tvActivityDurationDetail" />
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/comment_activity_my"
+        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="32dp"
+        android:layout_marginTop="24dp"
+        android:layout_marginEnd="32dp"
+        android:hint="Комментарий"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+
+        app:layout_constraintTop_toBottomOf="@+id/tvStartTime">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/comment_activity_my_edit"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" />
+    </com.google.android.material.textfield.TextInputLayout>
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
