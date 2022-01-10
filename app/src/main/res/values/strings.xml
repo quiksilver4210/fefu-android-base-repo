@@ -20,5 +20,9 @@
     <string name="text_sex_female">Женский</string>
     <string name="text_sex_other">Другой</string>
     <string name="content_description_toolbar_return_to_welcome_screen">Вернуться на приветственный экран</string>
+    <string name="text_my_activity_group">Моя</string>
+    <string name="text_users_activity_group">Пользователи</string>
+    <string name="title_activity_menu">Активность</string>
+    <string name="title_profile_menu">Профиль</string>
 
 </resources>
