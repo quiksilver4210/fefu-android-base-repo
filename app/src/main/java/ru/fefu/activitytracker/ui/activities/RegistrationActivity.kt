@@ -1,9 +1,10 @@
-package ru.fefu.activitytracker
+package ru.fefu.activitytracker.ui.activities
 
 import android.content.Intent
 import android.os.Bundle
 import android.text.method.LinkMovementMethod
 import androidx.appcompat.app.AppCompatActivity
+import ru.fefu.activitytracker.R
 import ru.fefu.activitytracker.databinding.ActivityRegistrationBinding
 
 class RegistrationActivity : AppCompatActivity() {

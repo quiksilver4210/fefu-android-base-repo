@@ -1,4 +1,4 @@
-package ru.fefu.activitytracker
+package ru.fefu.activitytracker.ui.activities
 
 import android.content.Intent
 import android.os.Bundle

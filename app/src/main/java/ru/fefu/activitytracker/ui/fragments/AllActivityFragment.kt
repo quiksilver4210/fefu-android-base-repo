@@ -1,4 +1,4 @@
-package ru.fefu.activitytracker
+package ru.fefu.activitytracker.ui.fragments
 
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -7,26 +7,27 @@ import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.viewpager2.adapter.FragmentStateAdapter
 import com.google.android.material.tabs.TabLayoutMediator
-import ru.fefu.activitytracker.databinding.FragmentActivityBinding
+import ru.fefu.activitytracker.R
+import ru.fefu.activitytracker.databinding.FragmentAllActivityBinding
 
-class ActivityFragment : Fragment(R.layout.fragment_activity) {
-    private lateinit var binding: FragmentActivityBinding
+class AllActivityFragment : Fragment(R.layout.fragment_all_activity) {
+    private lateinit var binding: FragmentAllActivityBinding
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View {
-        binding = FragmentActivityBinding.inflate(inflater, container, false)
+        binding = FragmentAllActivityBinding.inflate(inflater, container, false)
         return binding.root
     }
 
     companion object {
 
-        const val TAG = "activity_fragment"
+        const val TAG = "all_activity_fragment"
 
-        fun newInstance(): ActivityFragment {
+        fun newInstance(): AllActivityFragment {
             val bundle = Bundle()
-            val fragment = ActivityFragment()
+            val fragment = AllActivityFragment()
             fragment.arguments = bundle
             return fragment
         }
@@ -36,7 +37,7 @@ class ActivityFragment : Fragment(R.layout.fragment_activity) {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        binding.vpActivity.adapter = ActivityFragmentAdapter(this)
+        binding.vpActivity.adapter = AllActivityFragmentAdapter(this)
         TabLayoutMediator(
             binding.tlActivityGroup,
             binding.vpActivity
@@ -48,11 +49,9 @@ class ActivityFragment : Fragment(R.layout.fragment_activity) {
             }
         }.attach()
     }
-
-
 }
 
-class ActivityFragmentAdapter(fragment: ActivityFragment) : FragmentStateAdapter(fragment) {
+class AllActivityFragmentAdapter(fragment: AllActivityFragment) : FragmentStateAdapter(fragment) {
 
     override fun getItemCount(): Int = 2
 
